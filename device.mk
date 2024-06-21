@@ -173,9 +173,6 @@ PRODUCT_BOARD_PLATFORM := sm6150
 PRODUCT_USES_QCOM_HARDWARE := true
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
@@ -295,8 +292,7 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor \
-    android.system.keystore2
+    android.hardware.keymaster@4.1.vendor
 
 # Lineage Health
 PRODUCT_PACKAGES += \
@@ -402,7 +398,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.xiaomi-libperfmgr \
+    android.hardware.power-service.lineage-libperfmgr \
     android.hardware.power.stats@1.0-service.mock 
 
 PRODUCT_COPY_FILES += \
@@ -472,7 +468,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/xiaomi
+    hardware/xiaomi \
+    hardware/lineage/interfaces/power-libperfmgr \
+
 
 # Telephony
 PRODUCT_PACKAGES += \
